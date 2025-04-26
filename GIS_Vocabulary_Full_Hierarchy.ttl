@@ -1,0 +1,46 @@
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+<#GIS_Basic_Scheme> a skos:ConceptScheme ;
+    skos:prefLabel "GIS Basic Vocabulary"@en .
+
+<#Layer> a skos:Concept ;
+    skos:prefLabel "Layer"@en ;
+    skos:definition "A layer of geospatial information."@en ;
+    skos:topConceptOf <#GIS_Basic_Scheme> ;
+    skos:narrower <#Raster>, <#Vector> .
+
+<#Raster> a skos:Concept ;
+    skos:prefLabel "Raster"@en ;
+    skos:definition "Grid-based geospatial data."@en ;
+    skos:broader <#Layer> .
+
+<#Vector> a skos:Concept ;
+    skos:prefLabel "Vector"@en ;
+    skos:definition "Data represented by points, lines, or polygons."@en ;
+    skos:broader <#Layer> ;
+    skos:narrower <#Polygon>, <#Point>, <#Line> .
+
+<#Polygon> a skos:Concept ;
+    skos:prefLabel "Polygon"@en ;
+    skos:definition "A type of vector data representing areas."@en ;
+    skos:broader <#Vector> .
+
+<#Point> a skos:Concept ;
+    skos:prefLabel "Point"@en ;
+    skos:definition "A single geographic coordinate."@en ;
+    skos:broader <#Vector> .
+
+<#Line> a skos:Concept ;
+    skos:prefLabel "Line"@en ;
+    skos:definition "A series of points representing linear features."@en ;
+    skos:broader <#Vector> .
+
+<#Georeferencing> a skos:Concept ;
+    skos:prefLabel "Georeferencing"@en ;
+    skos:definition "Aligning spatial data with real-world locations."@en ;
+    skos:topConceptOf <#GIS_Basic_Scheme> .
+
+<#Spatial_Analysis> a skos:Concept ;
+    skos:prefLabel "Spatial Analysis"@en ;
+    skos:definition "Modeling and examining spatial relationships between objects."@en ;
+    skos:topConceptOf <#GIS_Basic_Scheme> .
